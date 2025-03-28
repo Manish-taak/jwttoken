@@ -1,0 +1,36 @@
+npm init -y
+npm install express mysql2 sequelize sequelize-cli bcryptjs jsonwebtoken dotenv cors body-parser
+CREATE DATABASE jwt_auth_db;
+npx sequelize-cli init
+npx sequelize-cli model:generate --name User --attributes name:string,email:string,password:string
+npx sequelize-cli db:migrate
+
+
+register
+data
+http://localhost:5000/register
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "123456"
+}
+
+
+login
+http://localhost:5000/login
+{
+  "email": "john@example.com",
+  "password": "123456"
+}
+
+
+jwtresponce
+{
+    "message": "Login successful",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2huQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQzMTgyNTEwLCJleHAiOjE3NDMxODYxMTB9.5Ua4u7hH3mm8g55ZSZRU5NPSRVPmM7cvadG24wuk07Y"
+}
+
+{
+  "message": "Login successful",
+  "token": "your_generated_jwt_token"
+}

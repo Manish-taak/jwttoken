@@ -1,0 +1,9 @@
+{
+    "development": {
+        "username": "root",
+        "password": "6377115988",
+        "database": "jwt_auth_db",
+        "host": "localhost",
+        "dialect": "mysql"
+    }
+}
